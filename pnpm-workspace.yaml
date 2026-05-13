@@ -4,3 +4,7 @@ packages:
 
 onlyBuiltDependencies:
   - esbuild
+
+minimumReleaseAgeExclude:
+  - vite-plus
+  - "@voidzero-dev/*"
