@@ -19,6 +19,9 @@ public/css/main.css
 # Coverage reports
 coverage
 
+# Vitest のレポートと添付ファイル
+.vitest/
+
 # API keys and secrets
 .env
 

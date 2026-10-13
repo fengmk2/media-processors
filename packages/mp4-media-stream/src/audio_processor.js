@@ -11,8 +11,7 @@ class Mp4MediaStreamAudioWorkletProcessor extends AudioWorkletProcessor {
 
   process(_inputs, outputs, _parameters) {
     for (let sampleIdx = 0; sampleIdx < outputs[0][0].length; sampleIdx++) {
-      for (let channelIdx = 0; channelIdx < outputs[0].length; channelIdx++) {
-        const outputChannel = outputs[0][channelIdx];
+      for (const outputChannel of outputs[0]) {
         const audioData = this.inputBuffer[0];
         if (audioData === undefined) {
           // ここに来るのは、入力音声データにギャップがあるか、

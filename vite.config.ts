@@ -2,6 +2,10 @@ import { defineConfig } from "vite-plus";
 
 // lint / fmt の設定を vite-plus の設定ファイルに統一する
 export default defineConfig({
+  test: {
+    // ルートからも各パッケージの jsdom 環境とテスト対象を使って実行する
+    projects: ["packages/*"],
+  },
   lint: {
     options: {
       // TypeScript の型情報を用いた lint ルールを有効化する
@@ -127,6 +131,8 @@ export default defineConfig({
       eqeqeq: "error",
       // var の使用を禁止 (let/const を使用)
       "no-var": "error",
+      // 既存のスタイルに合わせ、変数は 1 つずつ宣言する
+      "one-var": ["error", "never"],
       // if/else/for/while で波括弧を強制
       curly: "error",
       // for-in ループで hasOwnProperty チェックを強制
